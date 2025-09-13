@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partij 0 - Terug naar de feiten. Vooruit naar de toekomst.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Noto+Sans:wghts@400;700&display=swap" rel="stylesheet">
+    <!-- Icoontjes van Heroicons voor de dark mode toggle -->
+    <style>
+        :root {
+            --primary: #4A6C82;
+            --secondary: #E5E7EB;
+            --accent: #5A837D;
+            --button: #2C2F33;
+            --text: #111111;
+            --hover-overlay: rgba(255,255,255,0.1);
+        }
+        .font-heading {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .font-body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .bg-button { background-color: var(--button); }
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent); }
+        .text-body { color: var(--text); }
+        .hover\:bg-overlay:hover {
+            background-color: var(--hover-overlay);
+        }
+        html.dark {
+            background-color: #111111;
+        }
+        html.dark body {
+            background-color: #111111;
+            color: #E5E7EB;
+        }
+        html.dark .text-body {
+            color: #E5E7EB;
+        }
+        html.dark .bg-secondary {
+            background-color: #2C2F33;
+        }
+        html.dark .bg-white {
+            background-color: #1a1a1a;
+            border-color: #333;
+        }
+    </style>
+</head>
+<body class="font-body text-base text-body bg-secondary leading-relaxed tracking-wide transition-colors duration-500 overflow-x-hidden">
+
+    <header class="sticky top-0 z-50 bg-primary shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-white font-heading text-2xl font-bold flex items-center">
+                <img src="partij0logo.png" alt="Partij 0 Logo" class="h-8 md:h-10">
+            </a>
+            <nav class="flex items-center space-x-6 text-white font-heading">
+                <!-- Hamburger menu knop voor mobiel -->
+                <button id="mobileMenuToggle" class="md:hidden bg-button text-white rounded-full p-2 hover:bg-opacity-80 transition-opacity duration-300">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+                
+                <!-- Desktop navigatie -->
+                <ul id="main-menu" class="hidden md:flex space-x-6">
+                    <li><a href="#manifest" class="hover:text-accent transition-colors duration-300">Manifest</a></li>
+                    <li><a href="#beleidsfilosofie" class="hover:text-accent transition-colors duration-300">Beleidsfilosofie</a></li>
+                    <li><a href="#standpunten" class="hover:text-accent transition-colors duration-300">Standpunten</a></li>
+                    <li><a href="#programma" class="hover:text-accent transition-colors duration-300">Programma</a></li>
+                </ul>
+
+                <!-- Mobiel menu (wordt getoond na klikken) -->
+                <div id="mobile-menu" class="md:hidden absolute top-full left-0 w-full bg-primary py-4 px-4 transition-transform duration-300 transform -translate-y-full hidden">
+                    <ul class="flex flex-col space-y-4">
+                        <li><a href="#manifest" class="block py-2 hover:text-accent transition-colors duration-300">Manifest</a></li>
+                        <li><a href="#beleidsfilosofie" class="block py-2 hover:text-accent transition-colors duration-300">Beleidsfilosofie</a></li>
+                        <li><a href="#standpunten" class="block py-2 hover:text-accent transition-colors duration-300">Standpunten</a></li>
+                        <li><a href="#programma" class="block py-2 hover:text-accent transition-colors duration-300">Programma</a></li>
+                    </ul>
+                </div>
+
+                <!-- Knop voor dark mode -->
+                <button id="darkModeToggle" class="bg-button text-white rounded-full p-2 hover:bg-opacity-80 transition-opacity duration-300">
+                    <!-- Zon-icoon (zichtbaar in dark mode) -->
+                    <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <!-- Maan-icoon (zichtbaar in light mode) -->
+                    <svg id="moon-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9 9 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 my-8 md:my-16">
+        <section class="text-center mb-16">
+            <h1 class="font-heading text-4xl md:text-5xl font-bold text-primary mb-4">
+                Terug naar de feiten. Vooruit naar de toekomst.
+            </h1>
+            <p class="text-lg text-body max-w-2xl mx-auto">
+                De Nederlandse politiek is te vaak een speelveld geworden van incidenten, emoties en dogma’s. Korte termijn denken en partijbelangen krijgen voorrang boven langjarig beleid en verantwoordelijkheid. Daardoor verliezen we de samenhang uit het oog: tussen economie, ecologie, samenleving en cultuur.
+                <br><br>
+                Partij 0 wil een nieuwe koers: neutraal, beschouwend, gebaseerd op feiten en transparant naar de samenleving. Wij kiezen voor eenvoud, eerlijkheid en stabiliteit. Ons uitgangspunt: ieder mens begint op nul, eindigt op nul, en is gelijkwaardig daartussen. Politiek mag nooit een middel zijn om hiërarchie, privileges of dogma’s te bestendigen.
+            </p>
+        </section>
+
+        <section id="manifest" class="mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Kernwaarden</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Neutraliteit</h3>
+                    <p class="text-body">Politiek moet vrij zijn van religieuze dogma’s en ideologische vastgeroestheid. Besluitvorming is gebaseerd op feiten, wetenschap en transparantie.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Authenticiteit</h3>
+                    <p class="text-body">Woorden en daden horen samen te vallen. Eerlijke politiek betekent handelen in lijn met wat je belooft.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Transparantie</h3>
+                    <p class="text-body">Iedereen moet kunnen zien hoe besluiten tot stand komen, op basis van welke gegevens en afwegingen. Democratie werkt alleen met openheid.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Gelijkwaardigheid</h3>
+                    <p class="text-body">Ieder mens begint en eindigt gelijk. Politiek garandeert gelijke rechten en gelijke kansen, en verwerpt onterechte privileges of kunstmatige hiërarchieën.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Vrijheid door eenvoud</h3>
+                    <p class="text-body">Regels moeten duidelijk, begrijpelijk en noodzakelijk zijn. Geen bureaucratische ballast, maar ruimte voor mensen en bedrijven om vrij te handelen.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Verantwoordelijkheid voor de toekomst</h3>
+                    <p class="text-body">Politiek kijkt verder dan verkiezingscycli. Wij nemen besluiten die generaties vooruit standhouden.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Solidariteit met keuzevrijheid</h3>
+                    <p class="text-body">Zorg, onderwijs en bestaanszekerheid vormen de basis van een eerlijke samenleving. Solidariteit is transparant en nooit blind opgelegd, maar gericht op echte behoefte.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Duurzaamheid op basis van feiten</h3>
+                    <p class="text-body">Klimaat- en milieubeleid moet wetenschappelijk onderbouwd en uitvoerbaar zijn: ambitieus, maar ook realistisch en haalbaar.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Ondernemerschap en innovatie</h3>
+                    <p class="text-body">De markt is een motor voor vooruitgang. Economisch beleid stimuleert ondernemerschap en innovatie, maar altijd binnen spelregels die duurzaamheid en maatschappelijke verantwoordelijkheid waarborgen.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Zelfbeschikking en diversiteit</h3>
+                    <p class="text-body">Iedereen moet zijn of haar eigen pad kunnen kiezen. De overheid schrijft geen waarden of levensvormen voor, maar beschermt vrijheid en diversiteit.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="beleidsfilosofie" class="mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Beleidsfilosofie</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Economie</h3>
+                    <p class="text-body">Wij geloven in ondernemerschap, innovatie en een gezonde marktwerking. De markt is een krachtige motor voor vooruitgang, maar geen doel op zichzelf. Wij stimuleren investeren, innoveren en werken, altijd binnen duidelijke spelregels die duurzaamheid, eerlijke concurrentie en maatschappelijke verantwoordelijkheid borgen.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Sociaal</h3>
+                    <p class="text-body">Wij staan voor solidariteit, bestaanszekerheid en inclusie. Burgers moeten toegang hebben tot goede zorg, betaalbaar wonen en degelijk onderwijs. We bestrijden ongelijkheid en uitsluiting, maar behouden tegelijkertijd ruimte voor individuele vrijheid en verantwoordelijkheid.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Cultuur en samenleving</h3>
+                    <p class="text-body">Iedereen moet zijn of haar eigen pad kunnen kiezen. Politiek legt geen morele blauwdruk op, maar beschermt vrijheid van expressie en diversiteit. Cultuur is geen instrument van macht, maar een ruimte voor creativiteit en zelfbeschikking.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Ecologie</h3>
+                    <p class="text-body">Wetenschap en feiten zijn leidend voor natuur- en klimaatbeleid. Wij verwerpen zowel ontkenning als doemdenken en kiezen voor een pragmatische en haalbare transitie. Toekomstige generaties hebben recht op een leefbare aarde – dat is onze verantwoordelijkheid.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Bestuur</h3>
+                    <p class="text-body">Radicale transparantie betekent dat besluiten inzichtelijk worden gemaakt, inclusief de data en afwegingen die eraan ten grondslag liggen. Democratie is niet alleen stemmen, maar ook open verantwoording, toetsbaarheid en controle.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="belofte" class="text-center mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8">Onze belofte</h2>
+            <p class="text-lg text-body max-w-3xl mx-auto mb-4">
+                Wij beloven geen makkelijke antwoorden, maar eerlijke keuzes.<br>
+                Wij beloven geen heilige waarheden, maar open afwegingen.<br>
+                Wij beloven geen dogma’s, maar neutraliteit en transparantie.
+            </p>
+            <p class="text-lg text-body max-w-3xl mx-auto">
+                Wij geloven dat een samenleving sterker is wanneer ieder individu vrijheid heeft om betekenis te scheppen, wanneer politiek zich baseert op feiten in plaats van onderbuik, en wanneer bestuurders eerlijk en eenvoudig regeren.
+            </p>
+            <p class="text-lg font-bold text-primary max-w-3xl mx-auto mt-4">
+                In die eenvoud schuilt onze kracht.<br>
+                In die neutraliteit schuilt onze stabiliteit.<br>
+                En in die vrijheid schuilt de toekomst van ons land.
+            </p>
+        </section>
+
+        <section id="standpunten" class="mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Politieke standpunten op huidige thema’s</h2>
+            <!-- Dit gedeelte is geoptimaliseerd voor mobiel gebruik: op kleine schermen wordt de tabel een stapel kaarten -->
+            <div class="space-y-4">
+                <!-- Tabelkop voor grotere schermen -->
+                <div class="hidden md:grid md:grid-cols-3 gap-4 font-heading font-bold uppercase text-white bg-primary p-4 rounded-t-lg">
+                    <div class="rounded-tl-lg">Onderwerp</div>
+                    <div>Stelling</div>
+                    <div class="rounded-tr-lg">Standpunt Partij 0 + Data & Bron</div>
+                </div>
+
+                <!-- Migratie & asielbeleid -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Migratie & asielbeleid
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet jaarlijks minder vluchtelingen opnemen, ook als dat in strijd is met Europese afspraken.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Partij 0 wil verdragsgetrouwe opvang van echte vluchtelingen en strakke grenzen voor economische migratie. Geen eenzijdige reductie die verdragen schendt. Data: In 2022 vroegen in NL 46.460 mensen asiel aan (CBS, 2023). EU-asielregels verplichten verdeling en opvang (Bron: Rijksoverheid).
+                    </div>
+                </div>
+
+                <!-- Woningcrisis -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Woningcrisis
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet sneller en grootschaliger ingrijpen om goedkope huurwoningen te bouwen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, langjarig bouwprogramma met mix van huur en koop, gebaseerd op demografie. Data: Nederland kampt met een tekort van 390.000 woningen (ABF Research, 2023). Kabinet mikt op 900.000 nieuwe woningen tot 2030 (Planbureau voor de Leefomgeving).
+                    </div>
+                </div>
+                
+                <!-- Klimaatverandering -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Klimaatverandering
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet de klimaatdoelen halen, ook als dit burgers en bedrijven fors meer geld kost.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Klimaatbeleid moet wetenschappelijk onderbouwd en haalbaar zijn. Ambitie zonder doemdenken. Data: Klimaatwet verplicht NL tot 55% minder CO₂-uitstoot in 2030 (t.o.v. 1990) en klimaatneutraal in 2050. Kosten voor huishoudens en bedrijven variëren sterk; SER waarschuwt voor draagvlakverlies bij te hoge kosten (SER Klimaatrapport 2022).
+                    </div>
+                </div>
+
+                <!-- Stikstof -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Stikstof
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Boerenbedrijven die veel stikstof uitstoten moeten verplicht worden uitgekocht.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Uitkoop kan, maar innovatie en samenwerking hebben voorrang. Data: Stikstofuitstoot NL is vier keer hoger dan EU-gemiddelde (RIVM, 2022). Het kabinet stelde €24,3 miljard beschikbaar voor stikstofreductie en natuurherstel (Ministerie van LNV).
+                    </div>
+                </div>
+
+                <!-- Zorgtoegang -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Zorgtoegang
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Iedereen moet recht hebben op gratis basiszorg, volledig betaald uit belastingen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Zorg is basisrecht, maar niet volledig gratis. Betaalbaarheid via transparante financiering. Data: Zorgkosten in NL waren in 2022 €127 miljard (CBS, 2023). Volledig belastinggefinancierde zorg zou forse lastenverhoging betekenen.
+                    </div>
+                </div>
+                
+                <!-- Arbeidsmarkt -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Arbeidsmarkt
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        ZZP’ers moeten verplicht worden zich te verzekeren tegen ziekte en arbeidsongeschiktheid.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Geen verplichte eenheidsverzekering, wel kaders en bescherming. Data: In 2022 waren er 1,2 miljoen zzp’ers in NL (CBS). Slechts 20% heeft een AOV (Verzekeraars Nederland, 2021).
+                    </div>
+                </div>
+
+                <!-- Pensioenen -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Pensioenen
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De pensioenleeftijd moet bevroren worden, ook al kost dit de schatkist extra geld.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Geen bevriezing. Leeftijd koppelen aan levensverwachting, flexibiliteit voor zware beroepen. Data: Pensioenleeftijd stijgt in 2028 naar 67 jaar (CBS). Kosten van bevriezing worden geschat op €3–4 miljard per jaar (CPB, 2019).
+                    </div>
+                </div>
+
+                <!-- Belastingen -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Belastingen
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Vermogensbelasting voor miljonairs moet fors omhoog.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Vermogen eerlijker belasten, maar niet verstikkend. Data: Top 10% bezit 61% van het vermogen (CBS Vermogensstatistiek, 2021). Vermogensongelijkheid is groot; Box 3-heffing staat juridisch onder druk (Hoge Raad 2021, “Kerstarrest”).
+                    </div>
+                </div>
+
+                <!-- Economische ongelijkheid -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Economische ongelijkheid
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet inkomensverschillen actief verkleinen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Bestrijden via onderwijs, zorg en kansengelijkheid. Data: Gini-coëfficiënt NL (inkomen) = 0,29 (CBS, 2022), ongelijkheid relatief laag t.o.v. EU, maar vermogen is schever verdeeld.
+                    </div>
+                </div>
+
+                <!-- Energieprijzen -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Energieprijzen
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet de energierekening blijvend subsidiëren om betaalbaar te houden.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Tijdelijke steun mogelijk, maar structureel via energiemix en eerlijke tarieven. Data: In 2022 werd het prijsplafond ingevoerd, kosten ca. €10 miljard (Ministerie EZK). Energieprijzen schommelden door oorlog Oekraïne: gasprijs piek in aug 2022 > €300/MWh (TTF-markt).
+                    </div>
+                </div>
+
+                <!-- Kosten levensonderhoud -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Kosten levensonderhoud
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        BTW op boodschappen moet naar 0%.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Gerichte lastenverlichting voor lage/middeninkomens is effectiever dan algemene BTW-afschaffing. Data: Voedselprijzen stegen in 2022 met 10,8% (CBS). Verlaging BTW op groente/fruit van 9% naar 0% wordt onderzocht, maar uitvoering kostbaar en complex (SEO-onderzoek, 2022).
+                    </div>
+                </div>
+
+                <!-- Onderwijs -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Onderwijs
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Het collegegeld moet worden afgeschaft.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Collegegeld kan blijven, maar toegankelijkheid moet gegarandeerd via beurzen en steun. Data: Collegegeld is in 2023-2024 €2.314 per jaar (DUO). Afschaffing kost ca. €2,3 miljard per jaar (CPB, 2019).
+                    </div>
+                </div>
+
+                <!-- Veiligheid & criminaliteit -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Veiligheid & criminaliteit
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De politie moet meer bevoegdheden krijgen om telefoons en computers preventief te controleren.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Nee. Veiligheid mag niet ten koste gaan van fundamentele vrijheden. Data: Nederland heeft al uitgebreide bevoegdheden via de Wet Computercriminaliteit III (2019). Autoriteit Persoonsgegevens waarschuwt voor risico’s op privacy-schending (AP-advies, 2018).
+                    </div>
+                </div>
+
+                <!-- Digitalisering -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Digitalisering
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Overheidsinstanties mogen kunstmatige intelligentie inzetten om burgers te beoordelen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Alleen transparant, uitlegbaar en toetsbaar. Data: De toeslagenaffaire (met algoritmes en risicoprofielen) liet zien dat gebrek aan transparantie tot massale fouten leidt (Onderzoeksraad voor de Veiligheid, 2021). EU werkt aan AI-verordening (AI Act, 2023).
+                    </div>
+                </div>
+
+                <!-- Privacy -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Privacy
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Bedrijven die persoonlijke data misbruiken moeten een verbod op hun diensten krijgen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, streng toezicht en regie bij burgers. Data: De AVG (GDPR) geeft toezichthouders bevoegdheid tot boetes tot 4% van jaaromzet. In 2023 kreeg Meta (Facebook) een boete van €1,2 miljard (EDPB).
+                    </div>
+                </div>
+
+                <!-- Democratische vernieuwing -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Democratische vernieuwing
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet een bindend referendum invoeren.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Voorzichtig positief, maar alleen met duidelijke spelregels. Data: Het raadgevend referendum werd in 2018 afgeschaft na gebrekkige werking (Kamerstukken II 2017/2018). Peilingen: 70% van NL’ers wil een bindend referendum (I&O Research, 2021).
+                    </div>
+                </div>
+
+                <!-- Bestuurlijke efficiëntie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Bestuurlijke efficiëntie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Het aantal ministeries moet omlaag om bureaucratie te verminderen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Focus op minder regeldruk en eenvoud, niet puur op aantal ministeries. Data: Nederland telt 12 ministeries. Hervormingen in 2010 (fusie EZ+LNV → EL&I) lieten zien dat fusies vaak geen structurele efficiëntiewinst opleveren (Rekenkamer, 2013).
+                    </div>
+                </div>
+
+                <!-- Buitenlands beleid -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Buitenlands beleid
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet meer geld besteden aan ontwikkelingssamenwerking.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Steun mogelijk, maar feitelijk en transparant. Data: Nederland besteedt 0,67% van BNI aan ontwikkelingssamenwerking (2022), hoger dan EU-gemiddelde (0,57%) (OESO, 2023).
+                    </div>
+                </div>
+                
+                <!-- EU-relaties -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        EU-relaties
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet meer bevoegdheden terughalen uit Brussel.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Kritisch op overregulering, maar constructief in EU. Data: 70% van NL-wetgeving heeft een EU-component (WRR, 2018). Eurobarometer 2022: 74% van NL’ers vindt EU-lidmaatschap positief.
+                    </div>
+                </div>
+
+                <!-- Integratie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Integratie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nieuwe migranten moeten verplicht Nederlands spreken voordat zij een verblijfsvergunning krijgen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, taal en werk zijn sleutel tot integratie. Data: Sinds 2022 geldt de Wet Inburgering: nieuwkomers moeten binnen 3 jaar taalniveau B1 halen (DUO).
+                    </div>
+                </div>
+
+                <!-- Sociale zekerheid -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Sociale zekerheid
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De bijstand moet omhoog, ook als dit meer belastinggeld kost.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Bijstand moet toereikend en activerend zijn, focus op zelfredzaamheid. Data: Bijstandsnorm alleenstaande in 2023: €1.195 p/m (Rijksoverheid). SCP (2022) berekende dat 1 op 13 huishoudens in armoede leeft, vaak ondanks bijstand.
+                    </div>
+                </div>
+
+                <!-- Kinderarmoede -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Kinderarmoede
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet voor ieder arm kind gratis schoolmaaltijden regelen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, als onderdeel van gerichte aanpak. Data: In NL groeien 220.000 kinderen (6,2%) op in armoede (CBS, 2022). Kabinet stelde in 2023 €100 miljoen beschikbaar voor schoolmaaltijden (Rijksoverheid, 2023).
+                    </div>
+                </div>
+
+                <!-- Jeugdzorg -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Jeugdzorg
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De jeugdzorg moet terug naar landelijke regie en weg bij de gemeenten.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, landelijke regie met regionale uitvoering. Data: Sinds decentralisatie (2015) stegen de jeugdzorgkosten met 50% naar €6,6 miljard in 2021 (CBS). Rekenkamer (2021) concludeert: decentralisatie leverde geen betere zorg op.
+                    </div>
+                </div>
+
+                <!-- GGZ -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        GGZ
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Psychologische zorg moet zonder eigen risico toegankelijk zijn.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, gelijke toegang en wachttijdverkorting. Data: Gemiddelde wachttijd GGZ in 2023: 16 weken, boven de Treeknorm van 14 weken (NZa). Eigen risico basiszorg: €385 (Rijksoverheid).
+                    </div>
+                </div>
+
+                <!-- Woningcorporaties -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Woningcorporaties
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Woningcorporaties mogen geen woningen verkopen aan beleggers.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, corporaties terug naar kerntaak sociale huur. Data: In 2020 werden 10.500 corporatiewoningen verkocht, waarvan 34% aan beleggers (CBS, 2021).
+                    </div>
+                </div>
+
+                <!-- Mobiliteit -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Mobiliteit
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Het openbaar vervoer moet gratis worden voor alle reizigers.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Nee, OV moet betaalbaar en betrouwbaar, maar niet gratis. Data: Gratis OV kost NL jaarlijks ca. €4 miljard (Ministerie I&W, 2022). Studies tonen beperkt effect op autogebruik (Thesis EUR, 2019).
+                    </div>
+                </div>
+
+                <!-- Verkeer -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Verkeer
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De maximumsnelheid op snelwegen moet terug naar 130 km/u.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Beslissing op basis van milieu en veiligheid. Data: Verlaging van 130 naar 100 km/u scheelt 0,2 kiloton stikstof per jaar (RIVM, 2020). Verkeersdoden: in 2022 737 (CBS).
+                    </div>
+                </div>
+
+                <!-- Milieu -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Milieu
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Bedrijven die veel vervuilen moeten harder worden belast, ook als dit banen kost.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, strikte normen en innovatie. Data: De 10 grootste uitstoters in NL (o.a. Tata Steel, Shell) zijn goed voor 40% van industriële CO₂-uitstoot (Emissieregistratie, 2022).
+                    </div>
+                </div>
+
+                <!-- Landbouw -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Landbouw
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Intensieve veehouderij moet worden afgebouwd.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, via innovatie en samenwerking met boeren. Data: Nederland telt 3,7 miljoen runderen, 11,3 miljoen varkens, 100 miljoen kippen (CBS, 2022). Veehouderij veroorzaakt 46% van stikstofuitstoot (RIVM).
+                    </div>
+                </div>
+
+                <!-- Dierenwelzijn -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Dierenwelzijn
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Dierproeven moeten volledig verboden worden.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Streven naar reductie, maar niet totaalverbod zolang wetenschap het nodig heeft. Data: In 2021 werden in NL 401.000 dierproeven uitgevoerd, vooral voor biomedisch onderzoek (CBS, 2022). Alternatieve methoden nemen toe, maar zijn niet volledig dekkend.
+                    </div>
+                </div>
+
+                <!-- Waterbeheer -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Waterbeheer
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet meer investeren in dijken en waterveiligheid, ook als dit hogere belastingen betekent.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, vooruitdenken en investeren in veiligheid. Data: Nederland investeert jaarlijks ca. €1,3 miljard in waterveiligheid (Deltaprogramma 2023). KNMI waarschuwt dat rivierafvoeren extremer worden door klimaatverandering (KNMI Klimaatscenario’s, 2023).
+                    </div>
+                </div>
+
+                <!-- Innovatie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Innovatie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet meer geld steken in technologische innovatie.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, stimuleren van R&D en koppeling met onderwijs. Data: Nederland gaf in 2021 2,3% van het BBP uit aan R&D, onder de EU-doelstelling van 3% (Eurostat, 2022).
+                    </div>
+                </div>
+
+                <!-- Energietransitie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Energietransitie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Gemeenten moeten verplicht windmolens en zonneparken plaatsen, ook tegen de wil van bewoners.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Nee, draagvlak en compensatie zijn essentieel. Data: In 2022 kwam 40% van de elektriciteit uit hernieuwbare bronnen, vooral zon en wind (CBS). Lokale weerstand is groot: 60% van gemeenten meldt verzet tegen windmolens (Planbureau voor de Leefomgeving, 2021).
+                    </div>
+                </div>
+
+                <!-- Kernenergie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Kernenergie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet nieuwe kerncentrales bouwen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, mits veilig en kosten-baten positief. Data: Nieuwe kerncentrale Borssele gepland, bouwkosten geschat op €5-10 miljard per stuk, oplevering pas rond 2035 (Ministerie EZK, 2022). Kosten per MWh: ca. €90, duurder dan wind/zon (€60-80) (Pointer/KRO-NCRV, 2023).
+                    </div>
+                </div>
+
+                <!-- Gemeentefinanciën -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Gemeentefinanciën
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Gemeenten moeten meer eigen belastingen mogen heffen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, taken en middelen moeten eerlijk verdeeld zijn. Data: Gemeenten halen 36% van inkomsten uit lokale belastingen, rest via het Gemeentefonds (CBS, 2022). Rekenkamer waarschuwt voor mismatch tussen taken en budgetten (AR, 2021).
+                    </div>
+                </div>
+
+                <!-- Cultuur -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Cultuur
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Erfgoed en monumenten moeten zwaarder beschermd worden, ook als dit bouwprojecten vertraagt.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, maar met balans tussen behoud en vernieuwing. Data: Nederland telt 63.000 rijksmonumenten (RCE, 2023). Behoud kost ca. €500 miljoen per jaar.
+                    </div>
+                </div>
+
+                <!-- Ouderenzorg -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Ouderenzorg
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Iedere oudere moet recht krijgen op een plek in een verzorgingstehuis.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Niet automatisch, maar recht op passende zorg en woonvormen. Data: Aantal 80+ stijgt naar 1,5 miljoen in 2040 (CBS). Capaciteit verpleeghuizen is nu 125.000 plekken; wachttijden vaak >3 maanden (ActiZ, 2022).
+                    </div>
+                </div>
+
+                <!-- Pensioenleeftijd -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Pensioenleeftijd
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De pensioenleeftijd moet weer omlaag naar 65 jaar.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Nee, koppeling aan levensverwachting met flexibiliteit. Data: Levensverwachting 65-jarigen is nu 20,3 jaar (CBS, 2022). Verlaging naar 65 zou €12 miljard per jaar kosten (CPB, 2021).
+                    </div>
+                </div>
+
+                <!-- Kinderopvang -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Kinderopvang
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Kinderopvang moet volledig gratis zijn.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Nee, wel betaalbaar en toegankelijk. Data: Gratis opvang kost ca. €6 miljard extra per jaar (CPB, 2022). Kabinet wil vanaf 2027 96% vergoeding voor werkende ouders (Rijksoverheid, 2023).
+                    </div>
+                </div>
+
+                <!-- Gezinsbeleid -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Gezinsbeleid
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Gezinnen met kinderen moeten extra belastingkorting krijgen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ondersteuning via opvang, onderwijs en wonen, niet alleen via kortingen. Data: Huidige kindgebonden budget en kinderopvangtoeslag kosten samen €8 miljard per jaar (SZW, 2022).
+                    </div>
+                </div>
+
+                <!-- Abortus & rechten -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Abortus & rechten
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Abortus moet altijd en overal mogelijk zijn, zonder wachttijd.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, volledige keuzevrijheid en bescherming reproductieve rechten. Data: Sinds 2022 is de 5 dagen bedenktijd afgeschaft (Rijksoverheid). In 2021 werden 31.049 abortussen uitgevoerd in NL (Inspectie Gezondheidszorg, 2022).
+                    </div>
+                </div>
+
+                <!-- Discriminatie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Discriminatie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet harder optreden tegen racistische uitingen, ook online.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, aanpak via handhaving en kansengelijkheid, geen symboolpolitiek. Data: In 2022 registreerde de politie 6.580 discriminatiemeldingen, waarvan 37% racistisch (CBS).
+                    </div>
+                </div>
+
+                <!-- LHBTIQ+ rechten -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        LHBTIQ+ rechten
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Scholen moeten verplicht voorlichting geven over LHBTIQ+ onderwerpen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, veiligheid en inclusie zijn basisvoorwaarden. Data: Sinds 2012 zijn scholen verplicht aandacht te besteden aan seksuele diversiteit (OCW). Toch voelt 62% van LHBTI-jongeren zich onveilig op school (Movisie, 2021).
+                    </div>
+                </div>
+
+                <!-- Surveillance -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Surveillance
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid mag meer camera’s plaatsen voor veiligheid, ook op privéterrein.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Nee, veiligheid nooit boven fundamentele vrijheden. Data: In 2021 waren er 233.000 publieke camera’s in NL (Privacy First, 2022). Onderzoek wijst uit dat effect op criminaliteit beperkt is (WODC, 2020).
+                    </div>
+                </div>
+
+                <!-- Decentraal bestuur -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Decentraal bestuur
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Provincies moeten meer zeggenschap krijgen over eigen beleid.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, meer autonomie mits transparant en efficiënt. Data: Provincies beheren ca. 40% van het openbaar gebied (IPO, 2022). Kloof tussen taken en financiering groeit (Rekenkamer, 2021).
+                    </div>
+                </div>
+
+                <!-- Europees migratiebeleid -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Europees migratiebeleid
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet altijd meedoen aan Europese afspraken voor het verdelen van asielzoekers.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, gezamenlijk beleid en eerlijke verdeling, realistisch en uitvoerbaar. Data: In 2022 werden in de EU 881.000 asielaanvragen gedaan, NL: 46.460 (Eurostat, 2023). EU-migratiepact 2023 wil verplichte solidariteit tussen lidstaten (Europese Commissie).
+                    </div>
+                </div>
+
+                <!-- Minimumloon -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Minimumloon
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Het minimumloon moet fors omhoog.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, eerlijk minimumloon gekoppeld aan kosten levensonderhoud. Data: Minimumloon NL per juli 2023: €1.995 bruto p/m (Rijksoverheid). CPB berekende dat verhoging koopkracht laagste inkomens versterkt, maar banen kan kosten (CPB-notitie 2022).
+                    </div>
+                </div>
+
+                <!-- Staatsschuld -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Staatsschuld
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet de staatsschuld verlagen, ook als dit leidt tot bezuinigingen.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, verantwoord begrotingsbeleid en buffers opbouwen. Data: Staatsschuld NL in 2022: 51% van BBP, ruim onder EU-norm van 60% (CBS). CPB adviseert buffers opbouwen i.p.v. vergrijzing (CPB, 2021).
+                    </div>
+                </div>
+
+                <!-- Defensie -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Defensie
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        Nederland moet de NAVO-norm halen en 2% van het BBP aan defensie besteden.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, steun aan NAVO en modern defensiebeleid. Data: NL gaf in 2022 1,45% BBP uit aan defensie, stijging naar 2% gepland in 2024 (NAVO-rapport 2023).
+                    </div>
+                </div>
+
+                <!-- Media -->
+                <div class="bg-white rounded-lg shadow-md border border-gray-200 p-4 space-y-2 md:grid md:grid-cols-3 md:gap-4 md:p-6 md:space-y-0">
+                    <div class="text-body font-bold md:font-normal">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Onderwerp</span>
+                        Media
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Stelling</span>
+                        De overheid moet actief nepnieuws bestrijden, ook als dit inhoud verwijdert van sociale media.
+                    </div>
+                    <div class="text-body">
+                        <span class="md:hidden font-heading text-sm uppercase text-primary mb-1 block">Standpunt Partij 0 + Data & Bron</span>
+                        Standpunt: Ja, bestrijden met feiten en transparantie, maar zonder censuur. Data: 64% van Nederlanders ziet nepnieuws als bedreiging voor democratie (Eurobarometer, 2022). EU Digital Services Act verplicht platforms tot aanpak desinformatie (2023).
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="programma" class="mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Verkiezingsprogramma van Partij 0</h2>
+            <p class="text-lg text-body mb-8">
+                De Nederlandse politiek is te vaak een speelveld van incidenten, emoties en dogma’s. Partij 0 kiest voor een nieuwe koers: neutraal, beschouwend, gebaseerd op feiten en transparant. Wij willen een samenleving waarin politiek zich baseert op feiten in plaats van onderbuik, en waarin bestuurders eerlijk en eenvoudig regeren.
+            </p>
+            <h3 class="font-heading text-2xl font-bold text-accent mb-4">Hoofdpunten en Praktische Maatregelen</h3>
+            <div class="space-y-8">
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h4 class="font-heading text-xl font-bold text-primary mb-2">1. Feitelijk Bestuur & Democratische Vernieuwing</h4>
+                    <ul class="list-disc list-inside space-y-4 text-body">
+                        <li>
+                            <span class="font-bold">Radicale Transparantie:</span> Alle besluitvorming wordt volledig inzichtelijk gemaakt.
+                            <br><span class="pl-4 italic">Maatregel:</span> Lancering van een openbaar digitaal platform waarop beleidsvoorstellen inclusief onderliggende data, kosten-batenanalyses en wetenschappelijke bronnen worden gepubliceerd.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Eenmalige investeringskosten voor de ontwikkeling en implementatie (ca. €5-10 miljoen) en jaarlijkse onderhoudskosten (ca. €1-2 miljoen). Deze kosten worden gecompenseerd door een efficiënter besluitvormingsproces op de lange termijn.
+                        </li>
+                        <li>
+                            <span class="font-bold">Ontbureaucratisering:</span> De overheid moet eenvoudig en begrijpelijk zijn.
+                            <br><span class="pl-4 italic">Maatregel:</span> Instelling van een 'regelluwe zones' experiment, waarbij in geselecteerde gemeenten of sectoren onnodige regels tijdelijk worden opgeschort en het effect wordt gemeten.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Besparing op nalevingskosten voor burgers en bedrijven (geschat op €1 miljard per jaar) en besparing op uitvoeringskosten voor de overheid (geschat op €200-500 miljoen per jaar).
+                        </li>
+                        <li>
+                            <span class="font-bold">Bestrijding van Desinformatie:</span> Vrije pers wordt beschermd en desinformatie wordt actief bestreden met feiten.
+                            <br><span class="pl-4 italic">Maatregel:</span> Investeren in mediawijsheid en het aanwijzen van een onafhankelijke 'fact-check' instantie die misinformatie aan de kaak stelt, zonder de persvrijheid te beperken.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Jaarlijkse kosten voor de financiering van de onafhankelijke instantie en educatieve programma's (geschat op €10-20 miljoen).
+                        </li>
+                        <li>
+                            <span class="font-bold">Privacybescherming:</span> Burgers houden regie over hun data.
+                            <br><span class="pl-4 italic">Maatregel:</span> Versterking van de bevoegdheden van de Autoriteit Persoonsgegevens en introductie van een 'Persoonlijke Datakluis', waarmee burgers inzicht krijgen in en controle hebben over hun eigen data bij de overheid.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Jaarlijkse kosten voor het versterken van de toezichthouder (ca. €5-10 miljoen) en eenmalige investeringskosten voor het bouwen van de 'Datakluis' (ca. €20-30 miljoen).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h4 class="font-heading text-xl font-bold text-primary mb-2">2. Economie en Arbeidsmarkt</h4>
+                    <ul class="list-disc list-inside space-y-4 text-body">
+                        <li>
+                            <span class="font-bold">Eenvoudig Belastingstelsel:</span> Een transparant stelsel waarbij arbeid minder zwaar wordt belast en vermogen eerlijker.
+                            <br><span class="pl-4 italic">Maatregel:</span> De introductie van een drie-schijvenstelsel en het verplaatsen van de belasting op vermogen van een fictief naar een reëel rendement.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De verschuiving van belastingdruk heeft een neutraal budgettair effect op de overheid, maar kan resulteren in een hogere belastingopbrengst op de lange termijn.
+                        </li>
+                        <li>
+                            <span class="font-bold">Ondernemerschap en Innovatie:</span> De markt is een motor voor vooruitgang.
+                            <br><span class="pl-4 italic">Maatregel:</span> Het instellen van een nationaal innovatiefonds met als doel het financieren van start-ups en het verlagen van de belasting op R&D voor het MKB.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Jaarlijkse budgettaire impuls voor het innovatiefonds (geschat op €500 miljoen). De investering kan resulteren in een hogere economische groei op de lange termijn.
+                        </li>
+                        <li>
+                            <span class="font-bold">Flexibele Arbeidsmarkt:</span> Ruimte voor zzp'ers en flexibiliteit voor werkgevers.
+                            <br><span class="pl-4 italic">Maatregel:</span> Het ontwikkelen van een verplichte maar flexibele en betaalbare verzekering tegen arbeidsongeschiktheid voor zzp'ers, met keuzevrijheid in aanbieder.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten van de verzekering worden betaald door de zzp'ers en de verzekeraars. Het financiële gevolg voor de overheid is minimaal, afgezien van de toezichtkosten (geschat op €1-2 miljoen).
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h4 class="font-heading text-xl font-bold text-primary mb-2">3. Migratie, Integratie en Sociale Zekerheid</h4>
+                    <ul class="list-disc list-inside space-y-4 text-body">
+                        <li>
+                            <span class="font-bold">Humaan Migratiebeleid:</span> Een transparante en snelle asielprocedure.
+                            <br><span class="pl-4 italic">Maatregel:</span> De doorlooptijden van asielprocedures worden wettelijk vastgelegd.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Een efficiëntere asielprocedure leidt tot besparing op de opvangkosten (geschat op €500 miljoen tot €1 miljard per jaar).
+                        </li>
+                        <li>
+                            <span class="font-bold">Gelijkwaardigheid in Integratie:</span> Gelijkwaardige kansen, rechten en plichten voor legale asielzoekers.
+                            <br><span class="pl-4 italic">Maatregel:</span> Verplichte taal- en inburgeringstrajecten die direct starten na het verkrijgen van de verblijfsstatus, gekoppeld aan begeleiding naar werk of onderwijs.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Investeringskosten voor de begeleiding en inburgeringstrajecten (geschat op €100-200 miljoen per jaar), met als resultaat een hogere arbeidsparticipatie en lagere kosten voor de sociale zekerheid op de lange termijn.
+                        </li>
+                        <li>
+                            <span class="font-bold">Sociale Basiszekerheid:</span> De bijstand moet toereikend zijn, maar activerend.
+                            <br><span class="pl-4 italic">Maatregel:</span> De introductie van een gepersonaliseerde bijstandsaanpak, waarbij de uitkering wordt gekoppeld aan een individueel plan voor scholing of werk.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Kosten voor de begeleiding van bijstandsgerechtigden (geschat op €50-100 miljoen per jaar). De baten liggen in een vermindering van het aantal bijstandsuitkeringen op de lange termijn.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h4 class="font-heading text-xl font-bold text-primary mb-2">4. Klimaat, Milieu en Energie</h4>
+                    <ul class="list-disc list-inside space-y-4 text-body">
+                        <li>
+                            <span class="font-bold">Pragmatisch Klimaatbeleid:</span> Klimaatbeleid is wetenschappelijk onderbouwd en haalbaar.
+                            <br><span class="pl-4 italic">Maatregel:</span> Een klimaatfonds opgericht op basis van een CO2-heffing voor de grootste vervuilers, waarvan de opbrengsten direct worden geïnvesteerd in schone technologie.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> Een CO2-heffing levert een jaarlijkse opbrengst op (geschat op €1-2 miljard), die wordt herinvesteerd. Dit kan een prikkel geven aan de verduurzaming van de industrie.
+                        </li>
+                        <li>
+                            <span class="font-bold">Aanpak Vervuiling:</span> Strikte milieunormen en het 'vervuiler betaalt'-principe.
+                            <br><span class="pl-4 italic">Maatregel:</span> Introductie van een circulaire-economie-stimuleringsregeling die bedrijven beloont voor het hergebruiken van grondstoffen.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De stimuleringsregeling kost de overheid geld (geschat op €100-200 miljoen per jaar). Dit wordt gecompenseerd door de opbrengsten van de 'vervuiler betaalt'-heffing.
+                        </li>
+                        <li>
+                            <span class="font-bold">Diversiteit in Energiebronnen:</span> De energietransitie versnellen met een mix van zon, wind en kernenergie.
+                            <br><span class="pl-4 italic">Maatregel:</span> Starten met de bouw van een nieuwe, moderne kerncentrale.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten voor de bouw van een kerncentrale zijn hoog (geschat op €5-10 miljard per stuk). De kosten worden echter opgevangen door de opbrengsten van de energie die door de centrale wordt geproduceerd.
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h4 class="font-heading text-xl font-bold text-primary mb-2">5. Wonen en Levensonderhoud</h4>
+                    <ul class="list-disc list-inside space-y-4 text-body">
+                        <li>
+                            <span class="font-bold">Langjarig Woningprogramma:</span> Een feitelijk en demografisch onderbouwd programma voor de bouw van woningen.
+                            <br><span class="pl-4 italic">Maatregel:</span> Het vastleggen van een verplicht bouwquotum per regio, en het versnellen van vergunningprocedures.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten voor de overheid zijn beperkt (geschat op €50-100 miljoen per jaar). De baten liggen in de groei van de economie en de stijging van de vastgoedbelasting.
+                        </li>
+                        <li>
+                            <span class="font-bold">Gerichte Steun:</span> Gerichte steun voor lage- en middeninkomens bij stijgende kosten.
+                            <br><span class="pl-4 italic">Maatregel:</span> Invoering van een 'koopkracht-correctiebudget' voor huishoudens met een inkomen tot 150% van het minimumloon.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten voor de overheid zijn hoog (geschat op €1-2 miljard per jaar).
+                        </li>
+                        <li>
+                            <span class="font-bold">Betaalbaar Openbaar Vervoer:</span> Het openbaar vervoer moet betaalbaar en betrouwbaar zijn.
+                            <br><span class="pl-4 italic">Maatregel:</span> Een prijsplafond voor het OV en investeringen in regionale knooppunten en snelle busverbindingen.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten voor de overheid zijn aanzienlijk (geschat op €500-800 miljoen per jaar).
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h4 class="font-heading text-xl font-bold text-primary mb-2">6. Zorg, Onderwijs en Veiligheid</h4>
+                    <ul class="list-disc list-inside space-y-4 text-body">
+                        <li>
+                            <span class="font-bold">Zorg is een Basisrecht:</span> Toegankelijke en betaalbare zorg.
+                            <br><span class="pl-4 italic">Maatregel:</span> Afschaffing van het eigen risico voor geestelijke gezondheidszorg en preventieve zorg.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten hiervoor bedragen ca. €500-700 miljoen per jaar, afhankelijk van de precieze implementatie.
+                        </li>
+                        <li>
+                            <span class="font-bold">Kwaliteit in Onderwijs:</span> De focus ligt op kwaliteit en toegankelijkheid.
+                            <br><span class="pl-4 italic">Maatregel:</span> De introductie van een salarisbonus voor leraren die werken op scholen met een grote werkdruk, en een vermindering van de administratieve last.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De salarisbonus voor leraren kost ca. €100-200 miljoen per jaar.
+                        </li>
+                        <li>
+                            <span class="font-bold">Feitelijke Criminaliteitsbestrijding:</span> De aanpak van criminaliteit is gebaseerd op data en feiten.
+                            <br><span class="pl-4 italic">Maatregel:</span> Vergroten van de cybercrime-capaciteit bij de politie en het aanpakken van ondermijning door het instellen van gespecialiseerde teams.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten hiervoor bedragen ca. €50-100 miljoen per jaar.
+                        </li>
+                        <li>
+                            <span class="font-bold">Fundamentele Rechten:</span> Veiligheid waarborgen, maar nooit ten koste van fundamentele vrijheden en privacy.
+                            <br><span class="pl-4 italic">Maatregel:</span> Invoering van een parlementair toezichtsorgaan op de inzet van surveillance en algoritmes door de overheid.
+                            <br><span class="pl-4 italic">Financiële Gevolg:</span> De kosten voor dit orgaan bedragen ca. €5-10 miljoen per jaar.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="financieel" class="mb-16">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-8 text-center">Financiële Gevolgen voor de Schatkist/Begroting</h2>
+            <p class="text-body mb-4">
+                De totale financiële impact van dit programma is complex en hangt af van de timing van de implementatie en de economische conjunctuur. Echter, een schatting van de jaarlijkse kosten en baten levert het volgende beeld op:
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Totale Jaarlijkse Kosten</h3>
+                    <p class="text-body">De som van alle jaarlijkse kosten is een optelsom van de kosten voor de 'fact-check' instantie (€10-20 mln), de versterking van de AP (€5-10 mln), het nationaal innovatiefonds (€500 mln), de inburgeringstrajecten (€100-200 mln), de bijstandsaanpak (€50-100 mln), de kosten voor het 'koopkracht-correctiebudget' (€1-2 mld), het OV-prijsplafond (€500-800 mln), de afschaffing van het eigen risico (€500-700 mln), de salarisbonus voor leraren (€100-200 mln), de uitbreiding van de politiecapaciteit (€50-100 mln) en het parlementair toezichtsorgaan (€5-10 mln). Dit brengt de totale jaarlijkse kosten op een bedrag tussen de €2.92 miljard en €4.65 miljard.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-md border border-gray-200">
+                    <h3 class="font-heading text-xl font-bold text-accent mb-2">Totale Jaarlijkse Baten</h3>
+                    <p class="text-body">De baten komen uit de efficiëntere asielprocedure (€500 mln - €1 mld), de besparingen door ontbureaucratisering (€1.2 - €1.5 mld) en de opbrengsten van de CO2-heffing (€1-2 mld). De totale jaarlijkse baten worden geschat op €2.7 miljard en €4.5 miljard.</p>
+                </div>
+            </div>
+            <p class="text-body mt-4">
+                Hoewel de jaarlijkse kosten en baten elkaar in evenwicht houden, is het belangrijk om te benadrukken dat dit een neutraal budgettair beleid is. De partij richt zich op het herverdelen van bestaande middelen en het genereren van nieuwe inkomsten door de 'vervuiler betaalt'-heffing en besparingen op de overheidsuitgaven. Daarnaast zijn er diverse langetermijneffecten die niet direct in de jaarlijkse berekening zijn opgenomen:
+            </p>
+            <ul class="list-disc list-inside text-body mt-4 space-y-2">
+                <li>De opbrengst van het nieuwe belastingstelsel, de hogere economische groei door innovatie en de daling van de kosten voor sociale zekerheid door een hogere arbeidsparticipatie kunnen de totale kosten op de lange termijn significant verlagen.</li>
+                <li>De kosten van een nieuwe kerncentrale (€5-10 miljard) zijn een eenmalige investering, die zich over decennia terugverdient.</li>
+            </ul>
+            <p class="text-body mt-4">
+                Deze maatregelen leiden in de begroting tot een verschuiving van middelen van inefficiënte systemen naar investeringen in de toekomst van Nederland.
+            </p>
+        </section>
+
+    </main>
+    <footer class="bg-primary text-white text-center py-6 mt-16 rounded-t-lg">
+        <p class="text-sm">Partij 0 - Neutraal, Feitelijk, Toekomstgericht.</p>
+    </footer>
+    <script>
+        // Dark mode toggle functionaliteit
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+
+        function updateIcon(isDark) {
+            document.getElementById('sun-icon').classList.toggle('hidden', !isDark);
+            document.getElementById('moon-icon').classList.toggle('hidden', isDark);
+        }
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            updateIcon(true);
+        } else {
+            updateIcon(false);
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateIcon(false);
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateIcon(true);
+            }
+        });
+
+        // Mobiel menu toggle functionaliteit
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            const isMenuHidden = mobileMenu.classList.contains('hidden');
+            
+            // Toggle de zichtbaarheid van het menu
+            mobileMenu.classList.toggle('hidden');
+            
+            // Toggle de iconen
+            hamburgerIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+
+            // Animate in/out
+            if (isMenuHidden) {
+                mobileMenu.classList.remove('-translate-y-full');
+            } else {
+                mobileMenu.classList.add('-translate-y-full');
+            }
+        });
+
+        // Verberg het menu bij het klikken op een navigatielink
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
