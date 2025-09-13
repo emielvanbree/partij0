@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="3;url=partij0.html">
+    <title>Partij 0 - Redirect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Noto+Sans:wghts@400;700&display=swap" rel="stylesheet">
+    <!-- Icoontjes van Heroicons voor de dark mode toggle -->
+    <style>
+        :root {
+            --primary: #4A6C82;
+            --secondary: #E5E7EB;
+            --accent: #5A837D;
+            --button: #2C2F33;
+            --text: #111111;
+            --hover-overlay: rgba(255,255,255,0.1);
+        }
+        .font-heading {
+            font-family: 'IBM Plex Sans', sans-serif;
+        }
+        .font-body {
+            font-family: 'Noto Sans', sans-serif;
+        }
+        .bg-primary { background-color: var(--primary); }
+        .bg-secondary { background-color: var(--secondary); }
+        .bg-accent { background-color: var(--accent); }
+        .bg-button { background-color: var(--button); }
+        .text-primary { color: var(--primary); }
+        .text-accent { color: var(--accent); }
+        .text-body { color: var(--text); }
+        .hover\:bg-overlay:hover {
+            background-color: var(--hover-overlay);
+        }
+        html.dark {
+            background-color: #111111;
+        }
+        html.dark body {
+            background-color: #111111;
+            color: #E5E7EB;
+        }
+        html.dark .text-body {
+            color: #E5E7EB;
+        }
+        html.dark .bg-secondary {
+            background-color: #2C2F33;
+        }
+        html.dark .bg-white {
+            background-color: #1a1a1a;
+            border-color: #333;
+        }
+    </style>
+</head>
+<body class="font-body text-base text-body bg-secondary leading-relaxed tracking-wide transition-colors duration-500 overflow-x-hidden flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white rounded-lg shadow-lg p-8 md:p-12 text-center max-w-lg w-full transition-colors duration-500">
+        <img src="partij0logo.png" alt="Partij 0 Logo" class="h-16 md:h-20 mx-auto mb-6">
+        <h1 class="font-heading text-2xl md:text-3xl font-bold text-primary mb-4">
+            U wordt doorgestuurd
+        </h1>
+        <p class="text-lg text-body mb-6">
+            Even geduld alstublieft, u wordt over enkele seconden doorgestuurd naar de hoofdpagina.
+        </p>
+        <p class="text-sm text-gray-500">
+            Klik <a href="partij0.html" class="text-accent hover:underline font-bold">hier</a> als de doorverwijzing niet automatisch start.
+        </p>
+    </div>
+
+</body>
+</html>
